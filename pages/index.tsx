@@ -30,7 +30,7 @@ const Home: NextPage = () => {
         <div className="bg-secondary flex flex-col place-items-center">
           <div className="h-32"></div>
           <h1 className="text-heading-1 text-accent font-bold">Latest News</h1>
-          <div className="mt-16 flex flex-row space-x-10">
+          <div className="mt-16 flex flex-row space-x-120px">
             <div className="mr-60px hover:scale-105 ease-linear duration-200">
               <img src="/home.jpg" width="480"></img>
             </div>
