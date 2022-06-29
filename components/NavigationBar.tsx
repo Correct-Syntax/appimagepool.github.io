@@ -13,8 +13,7 @@ function NavigationBar(props: any) {
         <a className="px-4 font-bold text-accent" href="#download">Download</a>
       </div>
     </div>
-  </nav>
-  ;
+  </nav>;
 }
 
 export default NavigationBar
