@@ -7,10 +7,10 @@ function NavigationBar(props: any) {
         <Image src="/appimagepool.svg" width={48} height={48} />
       </div>
       <div className="mr-50px">
-        <a className="px-4 font-bold text-accent" href="#">Home</a>
-        <a className="px-4 font-bold text-accent" href="#blog">Blog</a>
-        <a className="px-4 font-bold text-accent" href="#features">Features</a>
-        <a className="px-4 font-bold text-accent" href="#download">Download</a>
+        <a className="px-4 font-bold text-accent" href="/#">Home</a>
+        <a className="px-4 font-bold text-accent" href="/#blog">Blog</a>
+        <a className="px-4 font-bold text-accent" href="/#features">Features</a>
+        <a className="px-4 font-bold text-accent" href="/#download">Download</a>
       </div>
     </div>
   </nav>;

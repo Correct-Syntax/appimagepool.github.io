@@ -26,7 +26,7 @@ const Home: NextPage = () => {
 
         <div className="h-32"></div>
 
-        <div className="bg-secondary flex flex-col place-items-center">
+        <div id="blog" className="bg-secondary flex flex-col place-items-center">
           <div className="h-32"></div>
           <h1 className="text-heading-1 text-accent font-bold">Latest News</h1>
           <div className="mt-16 flex flex-row space-x-120px">
