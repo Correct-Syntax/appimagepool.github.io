@@ -48,6 +48,8 @@ const Home: NextPage = () => {
 
         <div className="h-32"></div>
 
+        {/* TODO: Get the feature pattern to show */}
+
         <div id="features" className="flex flex-col space-y-32">
           <h1 className="text-accent text-heading-1 font-bold place-self-center">Features</h1>
           <div className="flex flex-row place-items-center justify-center">
