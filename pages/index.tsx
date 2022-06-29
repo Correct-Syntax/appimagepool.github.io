@@ -4,7 +4,6 @@ import Button from '../components/Button'
 import Footer from '../components/Footer'
 import AIPHead from '../components/Head'
 import NavigationBar from '../components/NavigationBar'
-import styles from '../styles/Home.module.css'
 
 const Home: NextPage = () => {
   return (
