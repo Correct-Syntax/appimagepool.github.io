@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Image from 'next/image'
 import Button from '../components/Button'
 import Footer from '../components/Footer'
 import AIPHead from '../components/Head'
