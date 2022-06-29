@@ -21,7 +21,8 @@ const Home: NextPage = () => {
         </div>
 
         <div className="absolute right-0 bottom-0">
-          <Image className="rounded-tl-md" src="/app.jpg" width={2566 / 7 * 2} height={1572 / 7 * 2} />
+          {/* TODO: Resize the image responsively */}
+          <img className="rounded-tl-md" src="/app.jpg" width="700" />
         </div>
 
         <div className="h-32"></div>
