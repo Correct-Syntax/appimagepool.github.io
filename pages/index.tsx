@@ -15,7 +15,7 @@ function Home({ posts }) {
           <h1 className="text-title font-bold text-accent">AppImage Pool</h1>
           <p className="text-paragraph">A simple, modern AppImageHub client powered by flutter.</p>
           <div className="flex flex-row space-x-5">
-            <Button isAccented={ true } text="Download" link="#download" />
+            <Button isAccented={ true } text="Download" link="/#download" />
             <Button isFlat={ true } text="Documentation" link="" />
           </div>
         </div>
