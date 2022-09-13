@@ -26,6 +26,7 @@ module.exports = {
       },
       spacing: {
         '50px': '3.125rem',
+        '112px': '7rem',
         '120px': '7.5rem',
         '150px': '9.375rem',
         '180px': '11.25rem',
@@ -33,5 +34,7 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 }

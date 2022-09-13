@@ -1,15 +1,16 @@
 import type { NextPage } from 'next'
+import Link from 'next/link'
 import Button from '../components/Button'
-import Footer from '../components/Footer'
-import AIPHead from '../components/Head'
-import NavigationBar from '../components/NavigationBar'
 
-const Home: NextPage = () => {
+import fs from 'fs'
+import matter from 'gray-matter'
+import path from 'path'
+import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
+
+function Home({ posts }) {
   return (
     <div>
-      <AIPHead/>
       <main>
-        <NavigationBar currentPage="Home" />
         <div className="h-screen flex flex-col justify-center space-y-5 ml-150px w-380px">
           <h1 className="text-title font-bold text-accent">AppImage Pool</h1>
           <p className="text-paragraph">A simple, modern AppImageHub client powered by flutter.</p>
@@ -28,19 +29,25 @@ const Home: NextPage = () => {
 
         <div id="blog" className="bg-secondary flex flex-col place-items-center">
           <div className="h-32"></div>
-          <h1 className="text-heading-1 text-accent font-bold">Latest News</h1>
-          <div className="mt-16 flex flex-row space-x-120px">
-            <div className="mr-60px hover:scale-105 ease-linear duration-200">
-              <img src="/home.jpg" width="480"></img>
-            </div>
-            <div className="flex flex-col w-380px space-y-4 justify-center">
-              <h2 className="text-heading-2 text-accent">Version 1.0</h2>
-              <p className="text-paragraph">Some summary text blah blah blah</p>
-              <div className="flex flex-row space-x-5">
-                <Button isAccented={ true } text="Read More" link="/posts/somepost" />
-                <Button isFlat={ true } text="View All" link="/posts" />
+          <div>
+            <h1 className="text-heading-1 text-accent font-bold">Latest News</h1>
+            {/* TODO: Get the most recent post */}
+            {posts.map((post) => (
+              <div className="mt-16 flex flex-row space-x-120px">
+                <div className="mr-60px hover:scale-105 ease-linear duration-200">
+                  <img src={post.data.thumbnailUrl} width="480" className="rounded-md shadow-lg"></img>
+                </div>
+                <div className="flex flex-col w-380px space-y-4 justify-center">
+                  <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
+                  <p className="text-paragraph">{post.data.description}</p>
+                  <div className="flex flex-row space-x-5">
+                    {/* TODO: Use POSTS_PATH here */}
+                    <Button isAccented={ true } text="Read More" link={ "posts/" + post.filePath.replace(".mdx", "") } />
+                    <Button isFlat={ true } text="View All" link="/blog" />
+                  </div>
+                </div>
               </div>
-            </div>
+            ))}
           </div>
           <div className="h-32"></div>
         </div>
@@ -57,12 +64,12 @@ const Home: NextPage = () => {
               <p className="text-paragraph">All apps are sorted into categories so you can search and find what your looking for quickly</p>
             </div>
             <div className="bg-contain bg-no-repeat bg-feature-pattern">
-              <img className="hover:scale-105 ease-linear duration-200" width="400" src="/category.jpg" />
+              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/category.jpg" />
             </div>
           </div>
           <div className="flex flex-row place-items-center justify-center">
             <div className="bg-contain bg-no-repeat bg-feature-pattern-flipped">
-              <img className="hover:scale-105 ease-linear duration-200" width="400" src="/app.jpg" />
+              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/app.jpg" />
             </div>
             <div className="w-380px mr-60 space-y-5 ml-120px">
               <h2 className="text-heading-2 text-accent">Upgrade and Downgrade AppImages Easily</h2>
@@ -75,12 +82,12 @@ const Home: NextPage = () => {
               <p className="text-paragraph">Keep multiple versions of AppImages at the same time</p>
             </div>
             <div className="bg-contain bg-no-repeat bg-feature-pattern">
-              <img className="hover:scale-105 ease-linear duration-200" width="400" src="/search.jpg" />
+              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/search.jpg" />
             </div>
           </div>
           <div className="flex flex-row place-items-center justify-center">
             <div className="bg-contain bg-no-repeat bg-feature-pattern-flipped">
-              <img className="hover:scale-105 ease-linear duration-200" width="400" src="/home.jpg" />
+              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/home.jpg" />
             </div>
             <div className="w-380px mr-60 space-y-5 ml-120px">
               <h2 className="text-heading-2 text-accent">Fast Downloader</h2>
@@ -111,11 +118,24 @@ const Home: NextPage = () => {
           </div>
           <div className="h-48"></div>
         </div>
-
-        <Footer/>
       </main>
     </div>
   )
 }
 
 export default Home
+
+export function getStaticProps() {
+  const posts = postFilePaths.map((filePath) => {
+    const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
+    const { content, data } = matter(source)
+
+    return {
+      content,
+      data,
+      filePath
+    }
+  })
+
+  return { props: { posts } }
+}

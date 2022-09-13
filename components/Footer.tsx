@@ -1,5 +1,6 @@
 function Footer(props: any) {
   return <footer>
+    <div className="h-16 bg-dark-1"></div>
     <div className="bg-dark-1 flex flex-row place-items-center justify-between">
       <div className="ml-150px flex flex-col text-small text-placeholder">
         <p className="font-bold">AppImagePool</p>
