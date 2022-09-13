@@ -11,10 +11,10 @@ function NavigationBar(props: any) {
           </Link>
         </div>
         <div className="mr-50px">
-          <a className="px-4 font-bold text-accent" href="/#">Home</a>
-          <a className="px-4 font-bold text-accent" href="/#blog">Blog</a>
-          <a className="px-4 font-bold text-accent" href="/#features">Features</a>
-          <a className="px-4 font-bold text-accent" href="/#download">Download</a>
+          <Link href="/"><a className="px-4 font-bold text-accent">Home</a></Link>
+          <Link href="/#blog"><a className="px-4 font-bold text-accent">Blog</a></Link>
+          <Link href="/#features"><a className="px-4 font-bold text-accent">Features</a></Link>
+          <Link href="/#download"><a className="px-4 font-bold text-accent">Download</a></Link>
         </div>
       </div>
     </div>
