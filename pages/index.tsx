@@ -31,7 +31,6 @@ function Home({ posts }) {
           <div className="h-32"></div>
           <div>
             <h1 className="text-heading-1 text-accent font-bold">Latest News</h1>
-            {/* TODO: Get the most recent post */}
             {posts.map((post) => (
               <div className="mt-16 flex flex-row space-x-120px">
                 <div className="mr-60px hover:scale-105 ease-linear duration-200">
@@ -126,7 +125,7 @@ function Home({ posts }) {
 export default Home
 
 export function getStaticProps() {
-  const posts = postFilePaths.map((filePath) => {
+  const allPosts = postFilePaths.map((filePath) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
     const { content, data } = matter(source)
 
@@ -136,6 +135,11 @@ export function getStaticProps() {
       filePath
     }
   })
+
+  // TODO: Don't publish drafts
+  // TODO: Sort the posts
+
+  const posts = [allPosts[0]]
 
   return { props: { posts } }
 }
