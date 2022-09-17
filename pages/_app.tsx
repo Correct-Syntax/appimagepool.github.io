@@ -7,9 +7,8 @@ import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }: AppProps) {
   // TODO: Make a responsive design
-  const router = useRouter()
-  console.log(router.pathname)
   
+  const router = useRouter()
   if (router.pathname === "/") {
     return (
       <div>
