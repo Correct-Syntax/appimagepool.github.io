@@ -32,3 +32,37 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Writing A Blog Post
+
+Place a file ending in `.mdx` in the `posts` directory. At the top of the file some metadata is required.
+
+**Example**
+```mdx
+---
+title: 'An Interesting Post Title'
+author: 'John Doe'
+date: '02/09/2022'
+description: 'A Really Amazing Description'
+thumbnailUrl: '/interesting_post_thumbnail.jpg'
+tags: ['Add', 'Some', 'Tags']
+draft: true
+---
+```
+
+*Note: Tags and the draft settings are not currently implemented*
+
+**Title** The title of the blog post
+
+**Author** The author's name
+
+**Date** The date in DD/MM/YYYY
+
+**Description** A summary of the post
+
+**Thumbnail URL** The path to the thumbnail image from the `public` directory
+
+**Tags** Some words to describe the general type of post (e.g. `Announcement`, `Technical` etc.)
+
+**Draft** Marks if this post is a draft (i.e. whether it should be published yet). Either set to `true` or `false`. Defaults to `false`
+
