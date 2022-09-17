@@ -44,10 +44,10 @@ export default function PostPage({ source, frontMatter }) {
             <div className="space-y-2">
                 <h1 className="text-title text-accent font-bold">{frontMatter.title}</h1>
                 {/* TODO: Add the reading time text next to author e.g. "Written by John Doe | 2 minute read time" */}
-                <p className="text-small text-placeholder">Written by {frontMatter.author}</p>
+                <p className="text-small text-placeholder pb-2">Written by {frontMatter.author} | {frontMatter.date}</p>
                 <p className="text-paragraph">{frontMatter.description}</p>
             </div>
-            <MDXRemote {...source} components={components} className="prose" />
+            <MDXRemote {...source} components={components} />
         </div>
     )
 }
