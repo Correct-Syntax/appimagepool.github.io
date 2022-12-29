@@ -1,8 +1,10 @@
-# appimagepool.github.io
+<center>
+    <h1>appimagepool.github.io</h1>
+    <p>The website for AppImage Pool, a simple, modern AppImageHub client powered by flutter.</p>
+</center>
 
 ![The hero section of the website](./assets/hero.png)
 
-The website for AppImage Pool, a simple, modern AppImageHub client powered by flutter.
 
 
 ## Development
