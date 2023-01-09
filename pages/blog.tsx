@@ -7,6 +7,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
+import { compareAsc, parseISO } from 'date-fns'
 
 function Blog({ posts }) {
     return (
@@ -45,13 +46,17 @@ export function getStaticProps() {
     const posts = postFilePaths.map((filePath) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
       const { content, data } = matter(source)
-  
+
       return {
         content,
         data,
         filePath
       }
+    }).sort((a, b) => {
+        const beforeDate = parseISO(a.data.date);
+        const afterDate = parseISO(b.data.date);
+        return afterDate - beforeDate;
     })
-  
+
     return { props: { posts } }
   }  
