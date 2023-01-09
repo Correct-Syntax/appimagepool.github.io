@@ -28,7 +28,7 @@ Place a file ending in `.mdx` in the `posts` directory. At the top of the file s
 ---
 title: 'An Interesting Post Title'
 author: 'John Doe'
-date: '02/09/2022'
+date: '2022-02-09'
 description: 'A Really Amazing Description'
 thumbnailUrl: '/interesting_post_thumbnail.jpg'
 tags: ['Add', 'Some', 'Tags']
@@ -42,7 +42,7 @@ draft: true
 
 **Author** The author's name
 
-**Date** The date in DD/MM/YYYY
+**Date** The date in YYYY-MM-DD
 
 **Description** A summary of the post
 

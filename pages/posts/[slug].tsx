@@ -10,6 +10,8 @@ import Image from 'next/image'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 
+import Date from '../../components/Date'
+
 function Heading1Text(props) {
     return (
         <h1 { ...props } className="text-heading-1 text-accent font-bold"></h1>
@@ -43,8 +45,10 @@ export default function PostPage({ source, frontMatter }) {
             </div>
             <div className="space-y-2">
                 <h1 className="text-title text-accent font-bold">{frontMatter.title}</h1>
-                {/* TODO: Add the reading time text next to author e.g. "Written by John Doe | 2 minute read time" */}
-                <p className="text-small text-placeholder pb-2">Written by {frontMatter.author} | {frontMatter.date}</p>
+                <span className="text-small text-placeholder pb-2">
+                    Written by {frontMatter.author} |&nbsp;
+                    <Date dateString={frontMatter.date}/>
+                </span>
                 <p className="text-paragraph">{frontMatter.description}</p>
             </div>
             <MDXRemote {...source} components={components} />
