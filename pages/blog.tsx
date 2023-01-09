@@ -7,7 +7,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
-import { compareAsc, parseISO } from 'date-fns'
+import { parseISO } from 'date-fns'
 
 function Blog({ posts }) {
     return (

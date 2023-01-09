@@ -6,6 +6,7 @@ import fs from 'fs'
 import matter from 'gray-matter'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
+import { parseISO } from 'date-fns'
 
 function Home({ posts }) {
   return (
@@ -134,10 +135,13 @@ export function getStaticProps() {
       data,
       filePath
     }
+  }).sort((a, b) => {
+      const beforeDate = parseISO(a.data.date);
+      const afterDate = parseISO(b.data.date);
+      return afterDate - beforeDate;
   })
 
   // TODO: Don't publish drafts
-  // TODO: Sort the posts
 
   const posts = [allPosts[0]]
 
