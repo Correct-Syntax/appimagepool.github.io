@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
 import Button from '../components/Button'
+import Date from '../components/Date'
 
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -22,7 +23,10 @@ function Blog({ posts }) {
                             </div>
                             <div className="flex flex-col w-380px space-y-4 justify-center">
                             <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
-                            <p className="text-small text-placeholder">{post.data.author} | {post.data.date}</p>
+                            <span className="text-small text-placeholder">
+                                {post.data.author} |&nbsp;
+                                <Date dateString={post.data.date}/>
+                            </span>
                             <p className="text-paragraph">{post.data.description}</p>
                             {/* TODO: Use POSTS_PATH here */}
                             <Button isAccented={ true } text="Read More" link={ "posts/" + post.filePath.replace(".mdx", "") } />
