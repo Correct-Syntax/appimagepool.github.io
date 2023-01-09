@@ -4,27 +4,6 @@ import { MDXRemote } from 'next-mdx-remote';
 import Image from 'next/image';
 import Text from '../components/Text';
 
-// const ResponsiveImage = (props) => (
-//     <Image alt={props.alt} layout="responsive" {...props} />
-// );
-
-// const components = {
-//     img: ResponsiveImage,
-//     h1: Text,
-//     h2: Text,
-//     p: Text,
-//     // code: Pre,
-//     // inlineCode: Code,
-// };
-
-// export default function Post(props) {
-//     return (
-//       <MDXProvider components={components}>
-//         <main {...props} />
-//       </MDXProvider>
-//     );
-// }
-
 const components = {};
 
 export default function Post({ source }) {
