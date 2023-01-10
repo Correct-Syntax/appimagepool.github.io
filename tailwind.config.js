@@ -18,7 +18,7 @@ module.exports = {
         'placeholder': "#858585",
       },
       fontSize: {
-        title: ['3rem', { lineHeight: '4.5rem' }],
+        title: ['3rem', { lineHeight: '3.5rem' }],
         'heading-1': ['2.25rem', { lineHeight: '3.375rem' }],
         'heading-2': ['1.75rem', { lineHeight: '2.625rem' }],
         paragraph: ['1.375rem', { lineHeight: '2rem' }],
