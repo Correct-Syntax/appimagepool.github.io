@@ -25,12 +25,7 @@ module.exports = {
         small: ['1.125rem', { lineHeight: '1.6875rem' }]
       },
       spacing: {
-        '50px': '3.125rem',
-        '112px': '7rem',
-        '120px': '7.5rem',
-        '150px': '9.375rem',
         '180px': '11.25rem',
-        '380px': '23.75rem'
       }
     },
   },

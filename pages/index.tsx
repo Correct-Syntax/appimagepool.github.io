@@ -12,8 +12,7 @@ function Home({ posts }) {
   return (
     <div>
       <main>
-
-        <div className="relative h-screen flex flex-col lg:flex-row space-y-5 mx-auto mt-44">
+        <div className="relative h-screen flex flex-col lg:flex-row space-y-5 mx-auto mt-20 md:mt-44">
           <div className="flex flex-col ml-6 md:ml-20 mr-6 md:mr-0 lg:ml-44">
             <h1 className="text-title font-bold text-accent">AppImage Pool</h1>
             <p className="text-paragraph text-gray-800 mt-3">A simple, modern AppImageHub client powered by flutter.</p>
