@@ -27,27 +27,25 @@ function Home({ posts }) {
           </div>
         </div>
 
-        <div id="blog" className="relative bg-secondary flex flex-col place-items-center py-32">
+        <div id="blog" className="relative bg-secondary flex flex-col place-items-center py-32 px-6">
           <h1 className="text-heading-1 text-accent font-bold mx-auto align-center">Latest News</h1>
-          <div className="max-w-5xl mx-6">
-            <div className="flex my-10">
-              {posts.map((post) => (
-                <div className="flex flex-col md:flex-row">
-                  <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
-                    <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
-                  </div>
-                  <div className="w-full md:w-1/2 flex flex-col ml-0 md:ml-16 mt-10 md:mt-0 space-y-4 justify-center">
-                    <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
-                    <p className="text-paragraph">{post.data.description}</p>
-                    <div className="flex flex-row space-x-5">
-                      {/* TODO: Use POSTS_PATH here */}
-                      <Button isAccented={ true } text="Read More" link={ "posts/" + post.filePath.replace(".mdx", "") } />
-                      <Button isFlat={ true } text="View All" link="/blog" />
-                    </div>
+          <div className="w-full max-w-5xl mx-6 my-10">
+            {posts.map((post) => (
+              <div className="flex flex-col md:flex-row">
+                <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
+                  <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
+                </div>
+                <div className="w-full md:w-1/2 flex flex-col ml-0 md:ml-16 mt-10 md:mt-0 space-y-4 justify-center">
+                  <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
+                  <p className="text-paragraph">{post.data.description}</p>
+                  <div className="flex flex-row space-x-5">
+                    {/* TODO: Use POSTS_PATH here */}
+                    <Button isAccented={ true } text="Read More" link={ "posts/" + post.filePath.replace(".mdx", "") } />
+                    <Button isFlat={ true } text="View All" link="/blog" />
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -57,7 +55,7 @@ function Home({ posts }) {
           <h1 className="text-heading-1 text-accent font-bold mx-auto mb-10">Features</h1>
           <div className="max-w-6xl justify-center mx-auto">
             <div className="flex flex-col md:flex-row mx-4 my-12 items-center">
-              <div className="w-full md:w-1/2 text-left md:text-right space-y-5">
+              <div className="w-full md:w-1/2 text-left md:text-right space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Simple Categories</h2>
                 <p className="text-paragraph">All apps are sorted into categories so you can search and find what your looking for quickly</p>
               </div>
@@ -69,13 +67,13 @@ function Home({ posts }) {
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
                 <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/app.jpg" />
               </div>
-              <div className="w-full md:w-1/2 text-left space-y-5">
+              <div className="w-full md:w-1/2 text-left space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Upgrade and Downgrade AppImages Easily</h2>
                 <p className="text-paragraph">Upgrade or downgrade all apps with the click of a button</p>
               </div>
             </div>
             <div className="flex flex-col md:flex-row mx-4 my-12 items-center">
-              <div className="w-full md:w-1/2 text-left md:text-right space-y-5">
+              <div className="w-full md:w-1/2 text-left md:text-right space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Version History and Multi Download Support</h2>
                 <p className="text-paragraph">Keep multiple versions of AppImages at the same time</p>
               </div>
@@ -87,7 +85,7 @@ function Home({ posts }) {
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
                 <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/home.jpg" />
               </div>
-              <div className="w-full md:w-1/2 text-left space-y-5">
+              <div className="w-full md:w-1/2 text-left space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Fast Downloader</h2>
                 <p className="text-paragraph">Thanks to multiprocessing and parellism, AppImage Pool downloads apps extremely quickly</p>
               </div>
@@ -95,21 +93,23 @@ function Home({ posts }) {
           </div>
         </div>
         
-        <div className="flex flex-col px-4 py-32">
+        <div id="opensource" className="flex flex-col px-4 py-32">
           <a href="https://github.com/prateekmedia/appimagepool">
-            <div className="flex flex-row justify-center place-items-center space-x-8">
-              <p className="text-paragraph">Free and open source forever</p>
-              <img src="/github.svg" width="40" height="40" />
+            <div className="flex flex-col md:flex-row justify-center place-items-center">
+              <p className="order-last md:order-first text-xl sm:text-2xl md:text-3xl md:mr-6">Free and open source forever</p>
+              <img className="order-first md:order-last w-10 h-10 mb-4 md:mb-0" src="/github.svg" />
             </div>
           </a>
         </div>
 
-        <div id="download" className="bg-dark-1 pt-32 pb-64">
+        <div id="download" className="flex flex-col bg-dark-1 pt-8 md:pt-32 pb-36 md:pb-64">
           <h1 className="text-heading-1 text-accent font-bold text-center py-32">Download</h1>
           <div className="flex flex-col md:flex-row justify-center mx-auto">
-            <Button isAccented={ true } text="Flatpak" />
-            <Button isAccented={ true } text="AppImage" />
-            <Button isAccented={ true } text="Nightly" />
+            <div className="flex flex-col md:flex-row space-x-0 md:space-x-2 space-y-2 md:space-y-0">
+              <Button isAccented={ true } text="Flatpak" />
+              <Button isAccented={ true } text="AppImage" />
+              <Button isAccented={ true } text="Nightly" />
+            </div>
           </div>
         </div>
       </main>
