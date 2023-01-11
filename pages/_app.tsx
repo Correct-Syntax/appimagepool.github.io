@@ -6,7 +6,6 @@ import NavigationBar from '../components/NavigationBar'
 import { useRouter } from 'next/router'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // TODO: Make a responsive design
   
   const router = useRouter()
   if (router.pathname === "/") {

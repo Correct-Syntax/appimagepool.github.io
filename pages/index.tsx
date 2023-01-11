@@ -53,7 +53,7 @@ function Home({ posts }) {
         <div id="features" className="flex flex-col py-14 md:py-20">
           <h1 className="text-heading-1 text-accent font-bold mx-auto mb-10">Features</h1>
           <div className="max-w-6xl justify-center mx-auto">
-            <div className="flex flex-col md:flex-row mx-4 my-12 items-center">
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
               <div className="w-full md:w-1/2 text-left md:text-right space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Simple Categories</h2>
                 <p className="text-paragraph">All apps are sorted into categories so you can search and find what your looking for quickly</p>
@@ -62,7 +62,7 @@ function Home({ posts }) {
                 <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/category.jpg" />
               </div>
             </div>
-            <div className="flex flex-col md:flex-row mx-4 my-12 items-center">
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
                 <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/app.jpg" />
               </div>
@@ -71,7 +71,7 @@ function Home({ posts }) {
                 <p className="text-paragraph">Upgrade or downgrade all apps with the click of a button</p>
               </div>
             </div>
-            <div className="flex flex-col md:flex-row mx-4 my-12 items-center">
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
               <div className="w-full md:w-1/2 text-left md:text-right space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Version History and Multi Download Support</h2>
                 <p className="text-paragraph">Keep multiple versions of AppImages at the same time</p>
@@ -80,7 +80,7 @@ function Home({ posts }) {
                 <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/search.jpg" />
               </div>
             </div>
-            <div className="flex flex-col md:flex-row mx-4 my-12 items-center">
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
                 <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/home.jpg" />
               </div>
