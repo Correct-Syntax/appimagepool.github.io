@@ -38,11 +38,9 @@ const components = {
 
 export default function PostPage({ source, frontMatter }) {
     return (
-        <div className="mx-50px mb-32 space-y-8">
+        <div className="flex flex-col max-w-4xl mb-32 space-y-8 mx-auto px-6 mt-10">
             {/* TODO: Use Image instead of img */}
-            <div className="flex flex-row justify-center">
-                <img src={frontMatter.thumbnailUrl} width="600" className="rounded-md shadow-lg hover:scale-105 ease-linear duration-200"></img>
-            </div>
+            <img src={frontMatter.thumbnailUrl} className="max-w-2xl w-auto h-auto rounded-md shadow-lg hover:scale-105 ease-linear duration-200"></img>
             <div className="space-y-2">
                 <h1 className="text-title text-accent font-bold">{frontMatter.title}</h1>
                 <span className="text-small text-placeholder pb-2">

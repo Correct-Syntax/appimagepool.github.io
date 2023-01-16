@@ -12,27 +12,27 @@ import { parseISO } from 'date-fns'
 function Blog({ posts }) {
     return (
         <div>
-            <div id="blog" className="flex flex-col place-items-center">
+            <div id="blog" className="flex flex-col max-w-4xl place-items-center mx-auto mt-20 px-6">
                 <div>
-                    <h1 className="mb-16 text-heading-1 text-accent font-bold">Blog</h1>
+                    <h1 className="text-heading-1 text-accent font-bold">Blog</h1>
                     {/* TODO: Order by date */}
                     {/* TODO: Add pagination */}
                     {posts.map((post) => (
-                        <div className="mb-32 flex flex-row space-x-120px">
-                            <div className="mr-60px hover:scale-105 ease-linear duration-200">
-                                <img src={post.data.thumbnailUrl} width="480" className="rounded-md shadow-lg"></img>
-                            </div>
-                            <div className="flex flex-col w-380px space-y-4 justify-center">
-                            <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
-                            <span className="text-small text-placeholder">
-                                {post.data.author} |&nbsp;
-                                <Date dateString={post.data.date}/>
-                            </span>
-                            <p className="text-paragraph">{post.data.description}</p>
+                      <div className="flex flex-col md:flex-row my-32">
+                        <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
+                          <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
+                        </div>
+                        <div className="w-full md:w-1/2 flex flex-col ml-0 md:ml-16 mt-10 md:mt-0 space-y-4 justify-center">
+                          <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
+                          <span className="text-small text-placeholder">
+                            {post.data.author} |&nbsp;
+                            <Date dateString={post.data.date}/>
+                          </span>
+                          <p className="text-paragraph">{post.data.description}</p>
                             {/* TODO: Use POSTS_PATH here */}
                             <Button isAccented={ true } text="Read More" link={ "posts/" + post.filePath.replace(".mdx", "") } />
-                            </div>
                         </div>
+                      </div>
                     ))}
                 </div>
             </div>

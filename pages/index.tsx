@@ -12,32 +12,29 @@ function Home({ posts }) {
   return (
     <div>
       <main>
-        <div className="h-screen flex flex-col justify-center space-y-5 ml-150px w-380px">
-          <h1 className="text-title font-bold text-accent">AppImage Pool</h1>
-          <p className="text-paragraph">A simple, modern AppImageHub client powered by flutter.</p>
-          <div className="flex flex-row space-x-5">
-            <Button isAccented={ true } text="Download" link="/#download" />
-            <Button isFlat={ true } text="Documentation" link="" />
+        <div className="relative h-screen flex flex-col lg:flex-row space-y-5 mx-auto mt-20 md:mt-44">
+          <div className="flex flex-col ml-6 md:ml-20 mr-6 md:mr-0 lg:ml-44">
+            <h1 className="text-title font-bold text-accent">AppImage Pool</h1>
+            <p className="text-paragraph text-gray-800 mt-3">A simple, modern AppImageHub client powered by flutter.</p>
+            <div className="flex flex-row space-x-5 mt-6">
+              <Button isAccented={ true } text="Download" link="/#download" />
+              <Button isFlat={ true } text="Documentation" link="" />
+            </div>
+          </div>
+          <div className="lg:ml-28">
+            <img className="mt-12 lg:mt-0 rounded-tl-md max-w-full h-auto" src="/app.jpg" />
           </div>
         </div>
 
-        <div className="absolute right-0 bottom-0">
-          {/* TODO: Resize the image responsively */}
-          <img className="rounded-tl-md" src="/app.jpg" width="700" />
-        </div>
-
-        <div className="h-32"></div>
-
-        <div id="blog" className="bg-secondary flex flex-col place-items-center">
-          <div className="h-32"></div>
-          <div>
-            <h1 className="text-heading-1 text-accent font-bold">Latest News</h1>
+        <div id="blog" className="relative bg-secondary flex flex-col place-items-center py-32 px-6">
+          <h1 className="text-heading-1 text-accent font-bold mx-auto align-center">Latest News</h1>
+          <div className="w-full max-w-5xl mx-6 my-10">
             {posts.map((post) => (
-              <div className="mt-16 flex flex-row space-x-120px">
-                <div className="mr-60px hover:scale-105 ease-linear duration-200">
-                  <img src={post.data.thumbnailUrl} width="480" className="rounded-md shadow-lg"></img>
+              <div className="flex flex-col md:flex-row">
+                <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
+                  <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
                 </div>
-                <div className="flex flex-col w-380px space-y-4 justify-center">
+                <div className="w-full md:w-1/2 flex flex-col ml-0 md:ml-16 mt-10 md:mt-0 space-y-4 justify-center">
                   <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
                   <p className="text-paragraph">{post.data.description}</p>
                   <div className="flex flex-row space-x-5">
@@ -49,74 +46,70 @@ function Home({ posts }) {
               </div>
             ))}
           </div>
-          <div className="h-32"></div>
         </div>
-
-        <div className="h-32"></div>
 
         {/* TODO: Get the feature pattern to show */}
 
-        <div id="features" className="flex flex-col space-y-32">
-          <h1 className="text-accent text-heading-1 font-bold place-self-center">Features</h1>
-          <div className="flex flex-row place-items-center justify-center">
-            <div className="w-380px ml-60 text-right space-y-5 mr-120px">
-              <h2 className="text-heading-2 text-accent">Simple Categories</h2>
-              <p className="text-paragraph">All apps are sorted into categories so you can search and find what your looking for quickly</p>
+        <div id="features" className="flex flex-col py-14 md:py-20">
+          <h1 className="text-heading-1 text-accent font-bold mx-auto mb-10">Features</h1>
+          <div className="max-w-6xl justify-center mx-auto">
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
+              <div className="w-full md:w-1/2 text-left md:text-right space-y-5 max-w-md md:max-w-sm">
+                <h2 className="text-heading-2 text-accent">Simple Categories</h2>
+                <p className="text-paragraph">All apps are sorted into categories so you can search and find what your looking for quickly</p>
+              </div>
+              <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mt-10 md:mt-0 ml-0 md:ml-10">
+                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/category.jpg" />
+              </div>
             </div>
-            <div className="bg-contain bg-no-repeat bg-feature-pattern">
-              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/category.jpg" />
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
+              <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
+                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/app.jpg" />
+              </div>
+              <div className="w-full md:w-1/2 text-left space-y-5 max-w-md md:max-w-sm">
+                <h2 className="text-heading-2 text-accent">Upgrade and Downgrade AppImages Easily</h2>
+                <p className="text-paragraph">Upgrade or downgrade all apps with the click of a button</p>
+              </div>
             </div>
-          </div>
-          <div className="flex flex-row place-items-center justify-center">
-            <div className="bg-contain bg-no-repeat bg-feature-pattern-flipped">
-              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/app.jpg" />
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
+              <div className="w-full md:w-1/2 text-left md:text-right space-y-5 max-w-md md:max-w-sm">
+                <h2 className="text-heading-2 text-accent">Version History and Multi Download Support</h2>
+                <p className="text-paragraph">Keep multiple versions of AppImages at the same time</p>
+              </div>
+              <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mt-10 md:mt-0 ml-0 md:ml-10">
+                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/search.jpg" />
+              </div>
             </div>
-            <div className="w-380px mr-60 space-y-5 ml-120px">
-              <h2 className="text-heading-2 text-accent">Upgrade and Downgrade AppImages Easily</h2>
-              <p className="text-paragraph">Upgrade or downgrade all apps with the click of a button</p>
-            </div>
-          </div>
-          <div className="flex flex-row place-items-center justify-center">
-            <div className="w-380px ml-60 text-right space-y-5 mr-120px">
-              <h2 className="text-heading-2 text-accent">Version History and Multi Download Support</h2>
-              <p className="text-paragraph">Keep multiple versions of AppImages at the same time</p>
-            </div>
-            <div className="bg-contain bg-no-repeat bg-feature-pattern">
-              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/search.jpg" />
-            </div>
-          </div>
-          <div className="flex flex-row place-items-center justify-center">
-            <div className="bg-contain bg-no-repeat bg-feature-pattern-flipped">
-              <img className="hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" width="400" src="/home.jpg" />
-            </div>
-            <div className="w-380px mr-60 space-y-5 ml-120px">
-              <h2 className="text-heading-2 text-accent">Fast Downloader</h2>
-              <p className="text-paragraph">Thanks to multiprocessing and parellism, AppImage Pool downloads apps extremely quickly</p>
+            <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
+              <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
+                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="/home.jpg" />
+              </div>
+              <div className="w-full md:w-1/2 text-left space-y-5 max-w-md md:max-w-sm">
+                <h2 className="text-heading-2 text-accent">Fast Downloader</h2>
+                <p className="text-paragraph">Thanks to multiprocessing and parellism, AppImage Pool downloads apps extremely quickly</p>
+              </div>
             </div>
           </div>
         </div>
+        
+        <div id="opensource" className="flex flex-col px-4 py-32">
+          <a href="https://github.com/prateekmedia/appimagepool">
+            <div className="flex flex-col md:flex-row justify-center place-items-center">
+              <p className="order-last md:order-first text-xl sm:text-2xl md:text-3xl md:mr-6">Free and open source forever</p>
+              <img className="order-first md:order-last w-10 h-10 mb-4 md:mb-0" src="/github.svg" />
+            </div>
+          </a>
+        </div>
 
-        <div className="h-32"></div>
-
-        <a href="https://github.com/prateekmedia/appimagepool">
-          <div className="flex flex-row justify-center place-items-center space-x-8">
-            <p className="text-paragraph">Free and open source forever</p>
-            <img src="/github.svg" width="48" height="48" />
+        <div id="download" className="flex flex-col bg-dark-1 pt-8 md:pt-32 pb-36 md:pb-64">
+          <h1 className="text-heading-1 text-accent font-bold text-center py-32">Download</h1>
+          <div className="flex flex-col md:flex-row justify-center mx-auto">
+            <div className="flex flex-col md:flex-row space-x-0 md:space-x-2 space-y-2 md:space-y-0">
+              <Button isAccented={ true } text="Flatpak" />
+              <Button isAccented={ true } text="AppImage" />
+              <Button isAccented={ true } text="Nightly" />
+            </div>
           </div>
-        </a>
-
-        <div className="h-32"></div>
-
-        <div id="download" className="bg-dark-1">
-          <div className="h-32"></div>
-          <h1 className="text-heading-1 text-accent font-bold text-center">Download</h1>
-          <div className="h-32"></div>
-          <div className="flex flex-row justify-center space-x-5">
-            <Button isAccented={ true } text="Flatpak" />
-            <Button isAccented={ true } text="AppImage" />
-            <Button isAccented={ true } text="Nightly" />
-          </div>
-          <div className="h-48"></div>
         </div>
       </main>
     </div>
