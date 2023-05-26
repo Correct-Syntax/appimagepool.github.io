@@ -18,7 +18,7 @@ function Blog({ posts } : { posts: any }) {
                     {/* TODO: Order by date */}
                     {/* TODO: Add pagination */}
                     {posts.map((post: any) => (
-                      <div className="flex flex-col md:flex-row my-32">
+                      <div className="flex flex-col md:flex-row my-32" key={post.data.title}>
                         <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
                           <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
                         </div>

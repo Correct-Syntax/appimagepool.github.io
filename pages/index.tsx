@@ -18,7 +18,7 @@ function Home({ posts } : { posts: any }) {
             <p className="text-paragraph text-gray-800 mt-3">A simple, modern AppImageHub client powered by flutter.</p>
             <div className="flex flex-row space-x-5 mt-6">
               <Button isAccented={ true } text="Download" link="/#download" />
-              <Button isFlat={ true } text="Documentation" link="" />
+              <Button isFlat={ true } text="Documentation" link="#" />
             </div>
           </div>
           <div className="lg:ml-28">
