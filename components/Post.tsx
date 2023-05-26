@@ -6,7 +6,7 @@ import Text from '../components/Text';
 
 const components = {};
 
-export default function Post({ source }) {
+export default function Post({ source } : { source: any }) {
   return (
     <div className="wrapper">
       <MDXRemote {...source} components={components} />
