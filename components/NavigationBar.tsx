@@ -7,7 +7,7 @@ function NavigationBar(props: any) {
       <div className="flex flex-col md:flex-row justify-between w-full place-items-center">
         <div className="cursor-pointer">
           <Link href="/">
-            <div><Image src="/appimagepool.svg" width={48} height={48} /></div>
+            <div><Image src="/public/appimagepool.svg" width={48} height={48} /></div>
           </Link>
         </div>
         <div className="mt-6 md:mt-0">
