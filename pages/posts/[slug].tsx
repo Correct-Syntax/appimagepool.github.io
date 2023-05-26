@@ -12,19 +12,19 @@ import { postFilePaths, POSTS_PATH } from '../../utils/mdxUtils'
 
 import Date from '../../components/Date'
 
-function Heading1Text(props) {
+function Heading1Text(props: any) {
     return (
         <h1 { ...props } className="text-heading-1 text-accent font-bold"></h1>
     )
 }
 
-function Heading2Text(props) {
+function Heading2Text(props: any) {
     return (
         <h2 { ...props } className="text-heading-2 text-accent"></h2>
     )
 }
 
-function ParagraphText(props) {
+function ParagraphText(props: any) {
     return (
         <p { ...props } className="text-paragraph"></p>
     )
