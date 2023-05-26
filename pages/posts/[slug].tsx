@@ -77,8 +77,8 @@ export const getStaticProps = async ({ params } : { params: any }) => {
 }
 
 export const getStaticPaths = async () => {
-    const paths = postFilePaths.map((path) => path.replace(/\.mdx?$/, ''))
-                               .map((slug) => ({ params: { slug } }))
+    const paths = postFilePaths.map((path: any) => path.replace(/\.mdx?$/, ''))
+                               .map((slug: any) => ({ params: { slug } }))
 
     return {
         paths,

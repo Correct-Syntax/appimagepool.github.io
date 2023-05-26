@@ -29,7 +29,7 @@ function Home({ posts } : { posts: any }) {
         <div id="blog" className="relative bg-secondary flex flex-col place-items-center py-32 px-6">
           <h1 className="text-heading-1 text-accent font-bold mx-auto align-center">Latest News</h1>
           <div className="w-full max-w-5xl mx-6 my-10">
-            {posts.map((post) => (
+            {posts.map((post: any) => (
               <div className="flex flex-col md:flex-row">
                 <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
                   <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
@@ -119,7 +119,7 @@ function Home({ posts } : { posts: any }) {
 export default Home
 
 export function getStaticProps() {
-  const allPosts = postFilePaths.map((filePath) => {
+  const allPosts = postFilePaths.map((filePath: any) => {
     const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
     const { content, data } = matter(source)
 

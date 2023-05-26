@@ -43,7 +43,7 @@ function Blog({ posts } : { posts: any }) {
 export default Blog
 
 export function getStaticProps() {
-    const posts = postFilePaths.map((filePath) => {
+    const posts = postFilePaths.map((filePath: any) => {
       const source = fs.readFileSync(path.join(POSTS_PATH, filePath))
       const { content, data } = matter(source)
 
