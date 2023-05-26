@@ -105,9 +105,9 @@ function Home({ posts } : { posts: any }) {
           <h1 className="text-heading-1 text-accent font-bold text-center py-32">Download</h1>
           <div className="flex flex-col md:flex-row justify-center mx-auto">
             <div className="flex flex-col md:flex-row space-x-0 md:space-x-2 space-y-2 md:space-y-0">
-              <Button isAccented={ true } text="Flatpak" />
-              <Button isAccented={ true } text="AppImage" />
-              <Button isAccented={ true } text="Nightly" />
+              <Button isAccented={ true } text="Flatpak" link="https://flathub.org/apps/io.github.prateekmedia.appimagepool" />
+              <Button isAccented={ true } text="AppImage" link="https://github.com/prateekmedia/appimagepool/releases/latest/" />
+              <Button isAccented={ true } text="Nightly" link="https://github.com/prateekmedia/appimagepool/releases/continuous/" />
             </div>
           </div>
         </div>
