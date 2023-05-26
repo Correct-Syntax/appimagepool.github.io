@@ -52,7 +52,7 @@ export function getStaticProps() {
         data,
         filePath
       }
-    }).sort((a, b) => {
+    }).sort((a: any, b: any) => {
         const beforeDate = parseISO(a.data.date);
         const afterDate = parseISO(b.data.date);
         return afterDate - beforeDate;
