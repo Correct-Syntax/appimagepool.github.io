@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Button from '../components/Button'
 import Date from '../components/Date'
 
@@ -20,7 +21,9 @@ function Blog({ posts } : { posts: any }) {
                     {posts.map((post: any) => (
                       <div className="flex flex-col md:flex-row my-32" key={post.data.title}>
                         <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
-                          <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
+                          <div className="max-w-full h-auto rounded-md shadow-lg">
+                            <Image src={post.data.thumbnailUrl} width={300} height={200} />
+                          </div>
                         </div>
                         <div className="w-full md:w-1/2 flex flex-col ml-0 md:ml-16 mt-10 md:mt-0 space-y-4 justify-center">
                           <h2 className="text-heading-2 text-accent">{post.data.title}</h2>

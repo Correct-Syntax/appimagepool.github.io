@@ -1,5 +1,6 @@
 import type { NextPage } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import Button from '../components/Button'
 
 import fs from 'fs'
@@ -7,6 +8,13 @@ import matter from 'gray-matter'
 import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import { parseISO } from 'date-fns'
+
+import githubIcon from '../public/github.svg'
+import home from '../public/home.jpg'
+import app from '../public/app.jpg'
+import category from '../public/category.jpg'
+import search from '../public/search.jpg'
+
 
 function Home({ posts } : { posts: any }) {
   return (
@@ -22,7 +30,9 @@ function Home({ posts } : { posts: any }) {
             </div>
           </div>
           <div className="lg:ml-28">
-            <img className="mt-12 lg:mt-0 rounded-tl-md max-w-full h-auto" src="./app.jpg" />
+            <div className="mt-12 lg:mt-0 rounded-tl-md max-w-full h-auto">
+              <Image src={app} />
+            </div>
           </div>
         </div>
 
@@ -32,7 +42,9 @@ function Home({ posts } : { posts: any }) {
             {posts.map((post: any) => (
               <div className="flex flex-col md:flex-row" key="{post.data.title}">
                 <div className="w-full md:w-1/2 hover:scale-105 ease-linear duration-200">
-                  <img src={post.data.thumbnailUrl} className="max-w-full h-auto rounded-md shadow-lg"></img>
+                  <div className="max-w-full h-auto rounded-md shadow-lg">
+                    <Image src={post.data.thumbnailUrl} width={300} height={200} />
+                  </div>
                 </div>
                 <div className="w-full md:w-1/2 flex flex-col ml-0 md:ml-16 mt-10 md:mt-0 space-y-4 justify-center">
                   <h2 className="text-heading-2 text-accent">{post.data.title}</h2>
@@ -59,12 +71,16 @@ function Home({ posts } : { posts: any }) {
                 <p className="text-paragraph">All apps are sorted into categories so you can search and find what your looking for quickly</p>
               </div>
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mt-10 md:mt-0 ml-0 md:ml-10">
-                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="./category.jpg" />
+                <div className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg">
+                  <Image src={category} />
+                </div>
               </div>
             </div>
             <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
-                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="./app.jpg" />
+                <div className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg">
+                  <Image src={app} />
+                </div>
               </div>
               <div className="w-full md:w-1/2 text-left space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Upgrade and Downgrade AppImages Easily</h2>
@@ -77,12 +93,16 @@ function Home({ posts } : { posts: any }) {
                 <p className="text-paragraph">Keep multiple versions of AppImages at the same time</p>
               </div>
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mt-10 md:mt-0 ml-0 md:ml-10">
-                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="./search.jpg" />
+                <div className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg">
+                  <Image src={search} />
+                </div>
               </div>
             </div>
             <div className="flex flex-col md:flex-row mx-4 my-20 items-center">
               <div className="w-full md:w-1/2 bg-contain bg-no-repeat bg-feature-pattern mb-10 md:mb-0 mr-0 md:mr-10">
-                <img className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg" src="./home.jpg" />
+                <div className="max-w-full h-auto hover:scale-105 ease-linear duration-200 rounded-md shadow-lg">
+                  <Image src={home} />
+                </div>
               </div>
               <div className="w-full md:w-1/2 text-left space-y-5 max-w-md md:max-w-sm">
                 <h2 className="text-heading-2 text-accent">Fast Downloader</h2>
@@ -96,7 +116,9 @@ function Home({ posts } : { posts: any }) {
           <a href="https://github.com/prateekmedia/appimagepool">
             <div className="flex flex-col md:flex-row justify-center place-items-center">
               <p className="order-last md:order-first text-xl sm:text-2xl md:text-3xl md:mr-6">Free and open source forever</p>
-              <img className="order-first md:order-last w-10 h-10 mb-4 md:mb-0" src="./github.svg" />
+              <div className="order-first md:order-last w-10 h-10 mb-4 md:mb-0">
+                <Image src={githubIcon} width={40} height={40} />
+              </div>
             </div>
           </a>
         </div>
