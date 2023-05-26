@@ -8,7 +8,7 @@ import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import { parseISO } from 'date-fns'
 
-function Home({ posts }) {
+function Home({ posts } : { posts: any }) {
   return (
     <div>
       <main>

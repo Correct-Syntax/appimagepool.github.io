@@ -36,7 +36,7 @@ const components = {
     "p": ParagraphText
 }
 
-export default function PostPage({ source, frontMatter }) {
+export default function PostPage({ source, frontMatter } : { source: any, frontMatter: any }) {
     return (
         <div className="flex flex-col max-w-4xl mb-32 space-y-8 mx-auto px-6 mt-10">
             {/* TODO: Use Image instead of img */}
@@ -54,7 +54,7 @@ export default function PostPage({ source, frontMatter }) {
     )
 }
 
-export const getStaticProps = async ({ params }) => {
+export const getStaticProps = async ({ params } : { params: any }) => {
     const postFilePath = path.join(POSTS_PATH, `${params.slug}.mdx`)
     const source = fs.readFileSync(postFilePath)
 

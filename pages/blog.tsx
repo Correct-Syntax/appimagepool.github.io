@@ -9,7 +9,7 @@ import path from 'path'
 import { postFilePaths, POSTS_PATH } from '../utils/mdxUtils'
 import { parseISO } from 'date-fns'
 
-function Blog({ posts }) {
+function Blog({ posts } : { posts: any }) {
     return (
         <div>
             <div id="blog" className="flex flex-col max-w-4xl place-items-center mx-auto mt-20 px-6">
